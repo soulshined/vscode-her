@@ -1,0 +1,29 @@
+
+Arrows:
+
+1. &bkarow; / ⤍
+2. &circlearrowleft; / ↺
+3. &circlearrowright; / ↻
+4. &crarr; / ↵
+5. &cudarrl; / ⤸
+
+Currency
+
+1. &cent; / ¢
+2. &curren; / ¤
+3. &dollar; / $
+4. &euro; / €
+5. &pound; / £
+
+Greek
+
+1. &Alpha; / Α
+   &alpha; / α
+2. &Beta; / Β
+   &beta; / β
+3. &Chi; / Χ
+   &chi; / χ
+4. &Delta; / Δ
+   &delta; / δ
+5. &epsi; / ε
+   &Epsilon; / Ε

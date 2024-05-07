@@ -1,0 +1,5 @@
+{
+    "rootDir" : ".fthtml",
+    "exportDir" :".fthtml",
+    "jsonDir" : "src/web"
+}

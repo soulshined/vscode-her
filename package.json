@@ -1,0 +1,131 @@
+{
+    "name": "html-entity-reference",
+    "displayName": "HER",
+    "publisher": "davidfreer",
+    "description": "html entity reference extension",
+    "version": "0.0.2",
+    "engines": {
+        "vscode": "^1.88.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "author": {
+        "name": "David Freer",
+        "email": "davidfreer@me.com",
+        "url": "https://www.davidfreer.me"
+    },
+    "activationEvents": [
+        "*"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/soulshined/vscode-her"
+    },
+    "keywords": [
+        "html",
+        "entity",
+        "unicode",
+        "reference",
+        "html5"
+    ],
+    "browser": "./dist/web/extension.js",
+    "icon": "docs/her.jpg",
+    "sponsor": {
+        "url": "https://github.com/sponsors/soulshined"
+    },
+    "license": "MIT",
+    "capabilities": {
+        "untrustedWorkspaces": {
+            "supported": true
+        }
+    },
+    "contributes": {
+        "views": {
+            "explorer": [
+                {
+                    "type": "webview",
+                    "id": "html-entity-reference.webview",
+                    "name": "HER"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "html-entity-reference.insert_entity",
+                "title": "Insert Entity",
+                "category": "HER"
+            },
+            {
+                "command": "html-entity-reference.insert_glyph",
+                "title": "Insert Entity Glyph",
+                "category": "HER"
+            },
+            {
+                "command": "html-entity-reference.convert_prompt",
+                "title": "Convert Entities",
+                "category": "HER"
+            }
+        ],
+        "configuration": {
+            "title": "HER",
+            "properties": {
+                "html-entity-reference.decorations": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "backgroundColor": {
+                            "type": "string",
+                            "description": "CSS color value",
+                            "default": "#ffa07a26"
+                        },
+                        "foregroundColor": {
+                            "type": "string",
+                            "description": "CSS color value",
+                            "default": "lightsalmon"
+                        }
+                    }
+                },
+                "html-entity-reference.codelens": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                        "enabled": {
+                            "type": "boolean",
+                            "default": true
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "scripts": {
+        "test": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. --extensionTestsPath=dist/web/test/suite/index.js",
+        "pretest": "npm run compile-web",
+        "vscode:prepublish": "npm run package-web",
+        "compile-web": "webpack",
+        "watch-web": "webpack --watch",
+        "package-web": "webpack --mode production --devtool hidden-source-map",
+        "lint": "eslint src --ext ts",
+        "run-in-browser": "vscode-test-web --browserType=chromium --extensionDevelopmentPath=. ."
+    },
+    "devDependencies": {
+        "@types/assert": "^1.5.10",
+        "@types/mocha": "^10.0.6",
+        "@types/vscode": "^1.88.0",
+        "@types/webpack-env": "^1.18.4",
+        "@typescript-eslint/eslint-plugin": "^7.7.1",
+        "@typescript-eslint/parser": "^7.7.1",
+        "@vscode/test-web": "^0.0.54",
+        "assert": "^2.1.0",
+        "copy-webpack-plugin": "^12.0.2",
+        "eslint": "^8.57.0",
+        "mocha": "^10.4.0",
+        "process": "^0.11.10",
+        "ts-loader": "^9.5.1",
+        "typescript": "^5.4.5",
+        "webpack": "^5.91.0",
+        "webpack-cli": "^5.1.4",
+        "yaml": "^2.4.2"
+    }
+}
